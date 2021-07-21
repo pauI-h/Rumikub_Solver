@@ -1,3 +1,3 @@
-class Tile {
+class Tile (val value: Int){
 
 }
