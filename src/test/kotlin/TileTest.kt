@@ -7,11 +7,16 @@ class TileTest {
     private val tile: Tile
 
     init {
-        tile = Tile(1)
+        tile = Tile(1, Colour.Red)
     }
 
     @Test
     fun testGetValue(){
         assertEquals(1, tile.value)
+    }
+
+    @Test
+    fun testColour(){
+        assertEquals(Colour.Red, tile.colour)
     }
 }
