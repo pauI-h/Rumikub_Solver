@@ -4,11 +4,7 @@ import kotlin.test.assertEquals
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class TileTest {
-    private val tile: Tile
-
-    init {
-        tile = Tile(1, Colour.Red)
-    }
+    private val tile: Tile = Tile(1, Colour.Red)
 
     @Test
     fun testGetValue(){
