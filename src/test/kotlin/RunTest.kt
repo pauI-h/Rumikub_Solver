@@ -9,6 +9,7 @@ class RunTest {
     private val blueTwo = Tile(2, Colour.Blue)
     private val blueThree = Tile(3, Colour.Blue)
     private val blueFour = Tile(4, Colour.Blue)
+    private val yellowThree = Tile(3, Colour.Yellow)
 
     @Test
     fun testValid() {
@@ -25,10 +26,17 @@ class RunTest {
     }
 
     @Test
-    fun testNonConsecutive(){
+    fun testNonConsecutive() {
         val tiles = mutableListOf(blueOne, blueTwo, blueFour)
         assertThrows<IllegalArgumentException>(
             "Runs must have consecutive elements"
         ) { Run(tiles) }
+    }
+
+    @Test
+    fun testWrongColour() {
+        val tiles = mutableListOf(blueOne, blueTwo, yellowThree)
+        assertThrows<IllegalArgumentException>("Runs must all be of the same colour")
+        { Run(tiles) }
     }
 }
