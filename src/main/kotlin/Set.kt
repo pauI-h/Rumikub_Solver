@@ -1,5 +1,5 @@
 abstract class Set(contents: MutableList<Tile>) {
-    private var contents: List<Tile>
+    protected var contents: List<Tile>
 
     init {
         if (contents.size >= 3) {
