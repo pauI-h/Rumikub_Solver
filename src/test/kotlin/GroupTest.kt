@@ -9,6 +9,7 @@ class GroupTest {
     private val redOne = Tile(1, Colour.Red)
     private val blackOne = Tile(1, Colour.Black)
     private val blackTwo = Tile(2, Colour.Black)
+    private val yellowOne = Tile(1, Colour.Yellow)
 
     @Test
     fun testValid(){
@@ -24,4 +25,11 @@ class GroupTest {
         ) { Group(tiles) }
     }
 
+    @Test
+    fun testTooLong() {
+        val tiles = mutableListOf(blueOne, redOne, blackOne, yellowOne, blueOne)
+        assertThrows <IllegalArgumentException> ("Groups cannot be larger than 4 tiles") {
+            Group(tiles)
+        }
+    }
 }
